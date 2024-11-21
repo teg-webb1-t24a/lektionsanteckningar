@@ -1,0 +1,73 @@
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+div {
+    overflow: hidden;  
+    font-size: 2rem;
+    color: darkgray;
+}
+  
+.gridlayout {
+    display: grid;
+    gap: 2px;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 40px auto 40px;
+    grid-template-areas:
+        "header header header"
+        "menu content content"
+        "footer footer footer";
+}
+
+@media screen and (max-width: 400px) {
+    .gridlayout {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, auto);
+            grid-template-areas:
+            "header"
+            "menu"
+            "content"
+            "footer"; 
+    }
+
+    .menu {
+        display: none;
+    }
+}
+
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 10px;
+}
+
+.content > * {
+    flex: 1 1 200px;  
+}
+
+
+/* Ange namn och färg för de olika sektionerna i layouten */
+
+.header {
+    grid-area: header;
+    background-color: #96cef4;
+}
+
+.menu {
+    grid-area: menu;
+    background-color: #ff6f69;
+}
+
+.content {
+    grid-area: content;
+    background-color: #88d8b0;
+}
+
+.footer {
+    grid-area: footer;
+    background-color: #ffcc5c;
+}

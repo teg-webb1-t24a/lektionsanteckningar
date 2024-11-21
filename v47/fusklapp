@@ -1,0 +1,45 @@
+Media query:
+
+@media screen and (max-width: 400px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, auto);
+        grid-template-areas:
+            "header"
+            "menu"
+            "content"
+            "footer";
+    }
+
+    /* .menu {
+        display: none;
+    }     */
+}
+
+Content:
+
+                <div><img src="pancakes.jpeg"></div>
+                <div><img src="pancakes.jpeg"></div>
+                <div><img src="pancakes.jpeg"></div>
+                <div><img src="pancakes.jpeg"></div>
+                <div><img src="pancakes.jpeg"></div>
+                <div><img src="pancakes.jpeg"></div>
+                <div><img src="pancakes.jpeg"></div>
+                <div><img src="pancakes.jpeg"></div>
+                <div><img src="pancakes.jpeg"></div>
+
+Flex:
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 10px;
+}
+
+/*  */
+
+.content > * {
+    flex: 1 1 200px;
+}
